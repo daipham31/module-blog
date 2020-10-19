@@ -1,22 +1,29 @@
 <?php
-
 namespace Duud\Blog\Controller\Index;
 
-use Magento\Framework\App\Action\Context;
+use \Magento\Framework\App\Action\Action;
 
-class Index extends \Magento\Framework\App\Action\Action
+class Index extends Action
 {
-    protected $_resultPageFactory;
-
-    public function __construct(Context $context, \Magento\Framework\View\Result\PageFactory $resultPageFactory)
+    /** @var  \Magento\Framework\View\Result\Page */
+    protected $resultPageFactory;
+    /**
+     * @param \Magento\Framework\App\Action\Context $context
+     */
+    public function __construct(\Magento\Framework\App\Action\Context $context,
+                                \Magento\Framework\View\Result\PageFactory $resultPageFactory)
     {
-        $this->_resultPageFactory = $resultPageFactory;
+        $this->resultPageFactory = $resultPageFactory;
         parent::__construct($context);
     }
 
+    /**
+     * Blog Index, shows a list of recent blog posts.
+     *
+     * @return \Magento\Framework\View\Result\PageFactory
+     */
     public function execute()
     {
-        $resultPage = $this->_resultPageFactory->create();
-        return $resultPage;
+        return $this->resultPageFactory->create();
     }
 }
