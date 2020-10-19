@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Magento, Inc. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="duud_blog_post" resource="default" engine="innodb" comment="Blog Post Table">
+        <column xsi:type="int" name="post_id" unsigned="true" nullable="false" identity="true" comment="Post ID"/>
+        <column xsi:type="varchar" name="title" nullable="false" length="255" comment="Blog Title"/>
+        <column xsi:type="text" name="content" nullable="true" comment="Blog Content"/>
+        <column xsi:type="smallint" name="is_active" unsigned="true" nullable="false" default="1" comment="Is Post Active"/>
+        <column xsi:type="timestamp" name="created_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="post_id" />
+        </constraint>
+    </table>
+</schema>
