@@ -48,6 +48,29 @@ class UpgradeData implements UpgradeDataInterface
                 ->insertMultiple($tableName, $data);
         }
 
+        if ($context->getVersion()
+            && version_compare($context->getVersion(), '0.0.3') < 0
+        ) {
+            $tableName = $installer->getTable('duud_blog_post');
+
+            $data = [
+                [
+                    'title' => 'Post 3 Title',
+                    'url_key' => 'post-3',
+                    'content' => 'Content of the first post.',
+                ],
+                [
+                    'title' => 'Post 4 Title',
+                    'url_key' => 'post-4',
+                    'content' => 'Content of the second post.',
+                ],
+            ];
+
+            $installer
+                ->getConnection()
+                ->insertMultiple($tableName, $data);
+        }
+
         $installer->endSetup();
 
 
