@@ -17,5 +17,24 @@
         "constraint": {
             "PRIMARY": true
         }
+    },
+    "duud_blog_comment": {
+        "column": {
+            "comment_id": true,
+            "post_id": true,
+            "text": true,
+            "status": true,
+            "creation_time": true,
+            "update_time": true,
+            "author_nickname": true,
+            "author_email": true
+        },
+        "index": {
+            "DUUD_BLOG_COMMENT_AUTHOR_NICKNAME": true
+        },
+        "constraint": {
+            "DUUD_BLOG_COMMENT_COMMENT_ID_DUUD_BLOG_POST_POST_ID": true,
+            "PRIMARY": true
+        }
     }
 }

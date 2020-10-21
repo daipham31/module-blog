@@ -27,5 +27,23 @@
         <constraint xsi:type="primary" referenceId="PRIMARY">
             <column name="post_id"/>
         </constraint>
-</table>
+    </table>
+
+    <table name="duud_blog_comment" resource="default" engine="innodb" comment="Blog comment Table">
+        <column xsi:type="int" name="comment_id" unsigned="true" nullable="false" identity="true" comment="Comment ID"/>
+        <column xsi:type="int" name="post_id" unsigned="true" nullable="false" comment="Post ID"/>
+        <column xsi:type="text" name="text" nullable="true" comment="Comment Content"/>
+        <column xsi:type="smallint" name="status" unsigned="true" nullable="false" default="1" comment="comment Status"/>
+        <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
+        <column xsi:type="timestamp" name="update_time" on_update="true" nullable="true" default="CURRENT_TIMESTAMP" comment="Comment Update Time"/>
+        <column xsi:type="varchar" name="author_nickname" nullable="false" length="100" comment="Author Nickname"/>
+        <column xsi:type="varchar" name="author_email" nullable="false" length="100" comment="Author email"/>
+        <index referenceId="BLOG_COMMENT_AUTHOR" indexType="fulltext">
+            <column name="author_nickname"/>
+        </index>
+        <constraint xsi:type="foreign" referenceId="BLOG_COMMENT_COMMENT_ID_BLOG_POST_POST_ID" table="duud_blog_comment" column="comment_id" referenceTable="duud_blog_post" referenceColumn="post_id" onDelete="CASCADE"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="comment_id"/>
+        </constraint>
+    </table>
 </schema>
