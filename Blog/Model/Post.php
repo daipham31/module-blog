@@ -1,4 +1,5 @@
-<?php namespace Duud\Blog\Model;
+<?php 
+namespace Duud\Blog\Model;
 
 use Duud\Blog\Api\Data\PostInterface;
 use Magento\Framework\DataObject\IdentityInterface;
