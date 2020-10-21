@@ -374,7 +374,7 @@
                 </item>
             </argument>
         </column>
-        <column name="is_active">
+        <!-- <column name="is_active">
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">Duud\Blog\Model\Post\Source\IsActive</item>
                 <item name="config" xsi:type="array">
@@ -385,7 +385,7 @@
                     <item name="label" xsi:type="string" translate="true">Status</item>
                 </item>
             </argument>
-        </column>
+        </column> -->
         <column name="creation_time" class="Magento\Ui\Component\Listing\Columns\Date">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -406,7 +406,7 @@
                 </item>
             </argument>
         </column>
-        <actionsColumn name="actions" class="Duud\Blog\Ui\Component\Listing\Column\PostActions">
+        <!-- <actionsColumn name="actions" class="Duud\Blog\Ui\Component\Listing\Column\PostActions">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="resizeEnabled" xsi:type="boolean">false</item>
@@ -414,6 +414,6 @@
                     <item name="indexField" xsi:type="string">post_id</item>
                 </item>
             </argument>
-        </actionsColumn>
+        </actionsColumn> -->
     </columns>
 </listing>
