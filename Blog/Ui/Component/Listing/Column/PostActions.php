@@ -10,7 +10,6 @@ class PostActions extends Column
 {
     /** Url path */
     const BLOG_URL_PATH_EDIT = 'blog/post/edit';
-    const BLOG_URL_PATH_DELETE = 'blog/post/delete';
 
     /** @var UrlInterface */
     protected $urlBuilder;
@@ -56,14 +55,6 @@ class PostActions extends Column
                     $item[$name]['edit'] = [
                         'href' => $this->urlBuilder->getUrl($this->editUrl, ['post_id' => $item['post_id']]),
                         'label' => __('Edit')
-                    ];
-                    $item[$name]['delete'] = [
-                        'href' => $this->urlBuilder->getUrl(self::BLOG_URL_PATH_DELETE, ['post_id' => $item['post_id']]),
-                        'label' => __('Delete'),
-                        'confirm' => [
-                            'title' => __('Delete "${ $.$data.title }"'),
-                            'message' => __('Are you sure you wan\'t to delete a "${ $.$data.title }" record?')
-                        ]
                     ];
                 }
             }
