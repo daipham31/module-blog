@@ -1,0 +1,27 @@
+<h1>Form Comment</h1>
+
+<form  method = "post" id = "contact-form">
+		<label for = "">Email: </label>
+	    <input name = "email" type="email" />
+		<label for = "">Content: </label>
+	    <input name = "content" type="text" />
+	    <input name = "post_id" type="hidden" value="<?php echo $block->getPostId();?>" />
+	    <input name = "creation_time" type="hidden" value="<?php echo $block->getCurrentDateTime();?>" />
+
+	    <input type="submit" value="Send" style="background: black; color: #fff; margin-top: 15px; padding: 10px; font-weight: bold;" class="submit" />
+	</form>
+<p class='note'></p>
+<?php 
+	$ajaxurl = $block->getFormAction();
+?>
+<script type="text/x-magento-init">
+        {
+            "*": {
+                "Duud_Blog/js/commentajax": {
+                    "AjaxUrl": "<?php echo $block->getAjaxUrl() ?>",
+                    "AjaxCommentLoadUrl": "<?php echo $block->getFormAction() ?>",
+                    "AjaxPostId": "<?php echo $block->getPostId(); ?>"
+                }
+            }
+        }
+</script>

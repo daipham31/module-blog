@@ -1,0 +1,26 @@
+<script id="blog-comment" type="text/x-magento-template">
+    <li class="blog-post-list-item"><%- cmt.author %>
+		<div class="blog-post-item-content"><%- cmt.content %></div>
+		<div class="blog-post-item-meta">
+			<small>Created at: <%- cmt.creation_time %></small>
+		</div>
+	</li>
+</script>
+</ul>
+
+<?php
+    $comments = $this->getComments();
+    if(count($comments) > 0)
+    {
+        echo "<h4>";
+        echo __('Lastest Comment For Post ID: ') . $block->getPostID(); 
+        echo "</h4>";
+        echo "<h1>Block List Comment</h1>";
+        foreach($comments as $item )
+        {
+            echo "<p>".$item->getContent()."</p>";
+        }
+    }
+    else
+        echo "<h3>no comments</h3>";
+?>
