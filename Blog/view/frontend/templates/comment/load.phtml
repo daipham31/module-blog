@@ -1,13 +1,3 @@
-<script id="blog-comment" type="text/x-magento-template">
-    <li class="blog-post-list-item"><%- cmt.author %>
-		<div class="blog-post-item-content"><%- cmt.content %></div>
-		<div class="blog-post-item-meta">
-			<small>Created at: <%- cmt.creation_time %></small>
-		</div>
-	</li>
-</script>
-</ul>
-
 <?php
     $comments = $this->getComments();
     if(count($comments) > 0)
