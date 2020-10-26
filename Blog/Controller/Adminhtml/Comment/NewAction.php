@@ -1,19 +1,13 @@
 <?php
-
 namespace Duud\Blog\Controller\Adminhtml\Comment;
 
 class NewAction extends \Magento\Backend\App\Action
 {
     /**
-     * Authorization level of a basic admin session
-     *
-     * @see _isAllowed()
-     */
-//    const ADMIN_RESOURCE = 'Duud_Blog::save';
-    /**
      * @var \Magento\Backend\Model\View\Result\Forward
      */
     protected $resultForwardFactory;
+
     /**
      * @param \Magento\Backend\App\Action\Context $context
      * @param \Magento\Backend\Model\View\Result\ForwardFactory $resultForwardFactory
@@ -25,6 +19,15 @@ class NewAction extends \Magento\Backend\App\Action
         $this->resultForwardFactory = $resultForwardFactory;
         parent::__construct($context);
     }
+
+    /**
+     * {@inheritdoc}
+     */
+    protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('Duud_Blog::save');
+    }
+
     /**
      * Forward to edit
      *

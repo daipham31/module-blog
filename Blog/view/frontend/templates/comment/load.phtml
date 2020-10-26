@@ -7,7 +7,8 @@
         echo "</h4>";
         echo "<h1>Block List Comment</h1>";
         foreach($comments as $item )
-        {
+        {   
+            echo "<p>".$item->getAuthor()."</p>";
             echo "<p>".$item->getContent()."</p>";
         }
     }

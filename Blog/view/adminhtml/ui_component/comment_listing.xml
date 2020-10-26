@@ -74,43 +74,6 @@
                 </settings>
             </filterSelect>
         </filters>
-        <massaction name="listing_massaction">
-            <action name="delete">
-                <settings>
-                    <confirm>
-                        <message translate="true">Are you sure you want to delete selected items?</message>
-                        <title translate="true">Delete items</title>
-                    </confirm>
-                    <url path="blog/comment/massDelete"/>
-                    <type>delete</type>
-                    <label translate="true">Delete</label>
-                </settings>
-            </action>
-            <action name="disable">
-                <settings>
-                    <url path="blog/comment/massDisable"/>
-                    <type>disable</type>
-                    <label translate="true">Disable</label>
-                </settings>
-            </action>
-            <action name="enable">
-                <settings>
-                    <url path="blog/comment/massEnable"/>
-                    <type>enable</type>
-                    <label translate="true">Enable</label>
-                </settings>
-            </action>
-            <action name="edit">
-                <settings>
-                    <callback>
-                        <target>editSelected</target>
-                        <provider>comment_listing.comment_listing.comment_columns_editor</provider>
-                    </callback>
-                    <type>edit</type>
-                    <label translate="true">Edit</label>
-                </settings>
-            </action>
-        </massaction>
         <paging name="listing_paging"/>
     </listingToolbar>
     <columns name="comment_columns">

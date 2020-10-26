@@ -1,73 +1,65 @@
 <?php
+
 namespace Duud\Blog\Controller\Adminhtml\Comment;
 
 use Magento\Backend\App\Action;
-use Magento\TestFramework\ErrorLog\Logger;
+use Duud\Blog\Model\Comment;
+use Magento\Framework\App\Request\DataPersistorInterface;
 
-class Save extends \Magento\Backend\App\Action
+class Save extends Action
 {
-
+    /**
+     * Authorization level of a basic admin session
+     */
+    const ADMIN_RESOURCE = 'Duud_Blog::save';
+    protected $dataPersistor;
     /**
      * @param Action\Context $context
+     * @param DataPersistorInterface $dataPersistor
      */
-    public function __construct(Action\Context $context)
+    public function __construct(
+        Action\Context $context,
+        DataPersistorInterface $dataPersistor
+    )
     {
+        $this->dataPersistor = $dataPersistor;
         parent::__construct($context);
     }
-
-    /**
-     * {@inheritdoc}
-     */
-    protected function _isAllowed()
-    {
-        return $this->_authorization->isAllowed('Duud_Blog::save');
-    }
-
-    /**
-     * Save action
-     *
-     * @return \Magento\Framework\Controller\ResultInterface
-     */
     public function execute()
     {
-        $data = $this->getRequest()->getPostValue();
-        /** @var \Magento\Backend\Model\View\Result\Redirect $resultRedirect */
         $resultRedirect = $this->resultRedirectFactory->create();
+        $data = $this->getRequest()->getPostValue();
         if ($data) {
-            /** @var \Duud\Blog\Model\Post $model */
+            // Optimize data
+            if (empty($data['comment_id'])) {
+                $data['comment_id'] = null;
+            }
+            // Init model and load by ID if exists
             $model = $this->_objectManager->create('Duud\Blog\Model\Comment');
-
-            $id = $this->getRequest()->getParam('comment]t_id');
+            $id = $this->getRequest()->getParam('comment_id');
             if ($id) {
                 $model->load($id);
             }
-
+            // Update model
             $model->setData($data);
-
-            $this->_eventManager->dispatch(
-                'blog_comment_prepare_save',
-                ['comment' => $model, 'request' => $this->getRequest()]
-            );
-
+            // Save data to database
             try {
                 $model->save();
-                $this->messageManager->addSuccess(__('You saved this Comment.'));
-                $this->_objectManager->get('Magento\Backend\Model\Session')->setFormData(false);
+                $this->messageManager->addSuccess(__('You saved the image.'));
+                $this->dataPersistor->clear('banner');
                 if ($this->getRequest()->getParam('back')) {
                     return $resultRedirect->setPath('*/*/edit', ['comment_id' => $model->getId(), '_current' => true]);
                 }
                 return $resultRedirect->setPath('*/*/');
-            } catch (\Magento\Framework\Exception\LocalizedException $e) {
-                $this->messageManager->addError($e->getMessage());
-            } catch (\RuntimeException $e) {
-                $this->messageManager->addError($e->getMessage());
             } catch (\Exception $e) {
-                $this->messageManager->addException($e, __('Something went wrong while saving the comment.'));
+                $this->messageManager->addException($e, __('Something went wrong while saving the image.'));
             }
-
-            $this->_getSession()->setFormData($data);
+            $this->dataPersistor->set('banner', $data);
             return $resultRedirect->setPath('*/*/edit', ['comment_id' => $this->getRequest()->getParam('comment_id')]);
         }
+        // Redirect to List page
         return $resultRedirect->setPath('*/*/');
     }
 }
+
+
