@@ -28,4 +28,25 @@
             </argument>
         </arguments>
     </type>
+
+    <preference for="Duud\Blog\Api\Data\CommentInterface" type="Duud\Blog\Model\Comment" />
+    <virtualType name="CommentGridDataProvider" type="Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider">
+        <arguments>
+            <argument name="collection" xsi:type="object" shared="false">Duud\Blog\Model\Resource\Comment\Collection</argument>
+            <argument name="filterPool" xsi:type="object" shared="false">BlogGirdFilterPool</argument>
+        </arguments>
+    </virtualType>
+    <virtualType name="Duud\Blog\Model\ResourceModel\Comment\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">duud_blog_comment</argument>
+            <argument name="resourceModel" xsi:type="string">Duud\Blog\Model\ResourceModel\Comment</argument>
+        </arguments>
+    </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="comment_listing_data_source" xsi:type="string">Duud\Blog\Model\ResourceModel\Comment\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
 </config>

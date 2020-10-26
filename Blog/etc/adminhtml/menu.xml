@@ -3,5 +3,6 @@
     <menu>
         <add id="Duud_Blog::blog_content" title="Blog" module="Duud_Blog" sortOrder="50" parent="Magento_Backend::content" resource="Duud_Blog::blog_content" />
         <add id="Duud_Blog::post" title="Posts" module="Duud_Blog" sortOrder="0" parent="Duud_Blog::blog_content" action="blog/post" resource="Duud_Blog::post"/>
+        <add id="Duud_Blog::comment" title="Comments" module="Duud_Blog" sortOrder="0" parent="Duud_Blog::blog_content" action="blog/comment" resource="Duud_Blog::comment"/>
     </menu>
 </config>
