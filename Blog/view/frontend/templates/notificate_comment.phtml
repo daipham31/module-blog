@@ -1,0 +1,12 @@
+<div data-role="comment-section" data-bind="scope: 'custom_section'">
+    reminder
+    <span style="color: red;" class="content-type" data-bind="text: custom_section().getCmtCount"></span>
+</div>
+
+<script type="text/x-magento-init">
+{
+    "[data-role=comment-section]": {
+        "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */ echo $block->getJsLayout(); ?>
+    }
+}
+</script>

@@ -84,7 +84,7 @@
                     <item name="validateBeforeSave" xsi:type="boolean">false</item>
                 </param>
                 <param name="indexField" xsi:type="string">comment_id</param>
-                <param name="enabled" xsi:type="boolean">true</param>
+                <param name="enabled" xsi:type="boolean">false</param>
                 <param name="selectProvider" xsi:type="string">comment_listing.comment_listing.comment_columns.ids</param>
             </editorConfig>
             <childDefaults>

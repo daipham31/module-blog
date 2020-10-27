@@ -1,27 +1,65 @@
-<h3>Form Comment</h3>
 
-<form  method = "post" id = "contact-form">
-		<label for = "">Email: </label>
-	    <input name = "email" type="email" />
-		<label for = "">Content: </label>
-	    <input name = "content" type="text" />
-	    <input name = "post_id" type="hidden" value="<?php echo $block->getPostId();?>" />
-	    <input name = "creation_time" type="hidden" value="<?php echo $block->getCurrentDateTime();?>" />
+<?php $helper = $this->helper('Duud\Blog\Helper\UserInfo'); ?>
+<form class="form" method="post" id="comment-form">
+    <fieldset class="fieldset">
+        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Add new comment') ?></span></legend><br>
+        <div class="note"></div>
+        <?php if(!$helper->isLoggedIn()) { ?>
+        <div class="field required">
+            <label for="author" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Name') ?></span>
+            </label>
+            <div class="control">
+                <input type="text" id="author"
+                       name="author"
+                       class="input-text" width="50%">
+            </div>
+        </div>
+        <?php } ?>
+        <?php if(!$helper->isLoggedIn()) { ?>
+        <div class="field required">
+            <label for="email" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Email') ?></span>
+            </label>
 
-	    <input type="submit" value="Send" class="submit" />
-	</form>
-<p class='note'></p>
-<?php 
-	$ajaxurl = $block->getFormAction();
-?>
+            <div class="control">
+                <input type="email" id="email"
+                       name="email"
+                       class="input-text" width="50%">
+            </div>
+        </div>
+        <?php } ?>
+        <div class="field required">
+            <label for="content" class="label">
+                <span><?php /* @escapeNotVerified */ echo __('Content') ?></span>
+            </label>
+
+            <div class="control">
+                <textarea id="content"
+                       name="content"
+                       class="input-text"></textarea>
+            </div>
+        </div>
+    </fieldset>
+    <input type="hidden" name="post_id" value="<?php echo $block->getPostID() ?>"/>
+    <div class="actions-toolbar">
+        <div class="primary">
+            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>">
+                <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
+            </button>
+        </div>
+    </div>
+
+</form>
 <script type="text/x-magento-init">
-        {
-            "*": {
-                "Duud_Blog/js/commentajax": {
-                    "AjaxUrl": "<?php echo $block->getAjaxUrl() ?>",
-                    "AjaxCommentLoadUrl": "<?php echo $block->getFormAction() ?>",
-                    "AjaxPostId": "<?php echo $block->getPostId(); ?>"
-                }
+    {
+        "*": {
+            "Duud_Blog/js/commentajax": {
+                "AjaxCommentPostUrl": "<?php echo $block->getFormAction() ?>",
+                "AjaxCommentLoadUrl": "<?php echo $block->getAjaxUrl() ?>",
+                "AjaxPostId": "<?php echo $block->getPostID(); ?>",
+                "AjaxNotificationLoadUrl": "<?php echo $block->getAjaxNotificationLoadUrl(); ?>"
             }
         }
+    }
 </script>

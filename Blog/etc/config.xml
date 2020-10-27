@@ -9,8 +9,11 @@
 <default>
      <blog>
      	<general>
-            <template>blog_comment_notification_email_template</template>
-        </general>
+               <template>blog_comment_notification_email_template</template>
+          </general>
+          <reminder>
+    		     <template>comment_reminder_email_template</template>
+    	     </reminder>
      </blog>
 </default>
 </config>
