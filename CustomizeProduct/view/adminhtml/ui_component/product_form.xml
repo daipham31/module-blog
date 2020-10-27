@@ -1,32 +1,38 @@
-<?xml version="1.0"?>
-<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
-    <fieldset name="stock_data">
-        <argument name="data" xsi:type="array">
-            <item name="config" xsi:type="array">
-                <item name="label" xsi:type="string" translate="true">Manage Stock Edited</item>
-                <item name="sortOrder" xsi:type="number">100</item>
-            </item>
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">   
+<modal name="advanced_inventory_modal">  
+     <fieldset name="manage_note">
+         <argument name="data" xsi:type="array">        
+             <item name="config" xsi:type="array">
+                 <item name="label" xsi:type="string" translate="true">Manage Note</item>
+                 <item name="dataScope" xsi:type="string"/>
+                 <item name="sortOrder" xsi:type="number">0</item>
+                 <item name="collapsible" xsi:type="boolean">true</item>
+                 <item name="opened" xsi:type="boolean">true</item>
+             </item>
          </argument>
-        <!--field sets can be nested -->
-        <field name="manage_stock" formElement="select">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="rawOptions" xsi:type="boolean">true</item>
-                    <item name="value" xsi:type="object">Magento\CatalogInventory\Model\Source\StockConfiguration</item>
-                </item>
-            </argument>
-            <settings>
-                <scopeLabel>[GLOBAL]</scopeLabel>
-                <label translate="true">Manage Stock Edited</label>
-                <dataScope>manage_stock</dataScope>
-            </settings>
-            <formElements>
-                <select>
-                    <settings>
-                        <options class="Magento\Config\Model\Config\Source\Yesno"/>
-                    </settings>
-                </select>
-            </formElements>
-        </field>
-    </fieldset>
+         <field name="note">
+             <argument name="data" xsi:type="array">
+                 <item name="config" xsi:type="array">
+                     <item name="label" xsi:type="string" translate="true">Notes</item>
+                     <item name="formElement" xsi:type="string">textarea</item>
+                     <item name="dataScope" xsi:type="string">quantity_and_stock_status.note</item>
+                     <item name="sortOrder" xsi:type="number">1</item>
+                     <item name="scopeLabel" xsi:type="string">[GLOBAL]</item>
+                 </item>
+             </argument>
+         </field>          
+     </fieldset>
+     <fieldset name="stock_data">
+         <argument name="data" xsi:type="array">
+             <item name="config" xsi:type="array">
+                 <item name="label" xsi:type="string" translate="true">Stock Configuration</item>
+                 <item name="dataScope" xsi:type="string"/>
+                 <item name="sortOrder" xsi:type="number">100</item>
+                 <item name="collapsible" xsi:type="boolean">true</item>
+             </item>
+         </argument>
+     </fieldset>   
+</modal>
 </form>
