@@ -1,0 +1,42 @@
+<h1><?php
+$this->getCatalogSession()->setMyName('This is Session');
+echo $block->getCatalogSession()->getMyName();
+echo "<br><br>";
+echo "test ss";
+echo "<br><br>";
+echo $this->getRegistry();
+ ?></h1>
+--------  using  object  manager ----------
+<br>
+<?php
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+
+$productRepository = $objectManager->get('\Magento\Catalog\Model\ProductRepository');
+
+// get product by product sku
+$product = $productRepository->get('MT12');
+
+echo $product->getEntityId() . '<br>';
+echo $product->getName() . '<br>';
+echo $product->getSKU() . '<br>';
+echo $product->getPrice() . '<br>';
+echo $product->getSpecialPrice() . '<br>';
+echo $product->getTypeId() . '<br>';
+echo $product->getProductUrl() . '<br>';
+
+
+?>
+<br>
+---------   using  repository  class---------
+<br>
+<?php
+$product = $this->loadMyProduct()->getName();
+echo $product;
+?>
+<br>
+--------- using Factory class ---------
+<br>
+<?php 
+$productFactory = $this->getFactorySku();
+echo $productFactory->getName();
+?>
