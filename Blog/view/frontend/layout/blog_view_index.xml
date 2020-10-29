@@ -4,7 +4,8 @@
         <referenceContainer name="content">
             <block class="Duud\Blog\Block\PostView" name="blog.list" template="Duud_Blog::post/view.phtml"  />
             <block class="Duud\Blog\Block\Comment\Add" name="blog_comment_add" template="Duud_Blog::comment/add.phtml"/>
-            <block class="Duud\Blog\Block\Comment\Load" name="blog_comment_load" template="Duud_Blog::comment/load.phtml" cacheable="false"/>
+            <block class="Duud\Blog\Block\Comment\Load" name="blog_comment_load" template="Duud_Blog::comment/load.phtml" cacheable="false" />
         </referenceContainer>
     </body>
 </page>
+    
