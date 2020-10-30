@@ -248,3 +248,8 @@ A virtual type allows you to change the arguments of a specific injectable depen
     - Extension attributes. Extension attributes are new in Magento 2. They are used to extend functionality and often use more complex data types than custom attributes. These attributes do not appear on the GUI.
 
     More: http://www.weicot.com/dev/guides/v2.0/extension-dev-guide/attributes.html
+
+8.  How to customize UI component template?
+
+
+UPDATE QUERY: https://github.com/daipham31/open-training.git
