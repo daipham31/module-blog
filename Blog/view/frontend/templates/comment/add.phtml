@@ -1,65 +1,51 @@
-
-<?php $helper = $this->helper('Duud\Blog\Helper\UserInfo'); ?>
-<form class="form" method="post" id="comment-form">
-    <fieldset class="fieldset">
-        <legend class="legend"><span><?php /* @escapeNotVerified */ echo __('Add new comment') ?></span></legend><br>
-        <div class="note"></div>
-        <?php if(!$helper->isLoggedIn()) { ?>
-        <div class="field required">
-            <label for="author" class="label">
-                <span><?php /* @escapeNotVerified */ echo __('Name') ?></span>
-            </label>
-            <div class="control">
-                <input type="text" id="author"
-                       name="author"
-                       class="input-text" width="50%">
-            </div>
-        </div>
-        <?php } ?>
-        <?php if(!$helper->isLoggedIn()) { ?>
-        <div class="field required">
-            <label for="email" class="label">
-                <span><?php /* @escapeNotVerified */ echo __('Email') ?></span>
-            </label>
-
-            <div class="control">
-                <input type="email" id="email"
-                       name="email"
-                       class="input-text" width="50%">
-            </div>
-        </div>
-        <?php } ?>
-        <div class="field required">
-            <label for="content" class="label">
-                <span><?php /* @escapeNotVerified */ echo __('Content') ?></span>
-            </label>
-
-            <div class="control">
-                <textarea id="content"
-                       name="content"
-                       class="input-text"></textarea>
-            </div>
-        </div>
-    </fieldset>
+<?php
+   $block = $this->getLayout()
+    ->createBlock('Duud\Blog\Block\Comment\Load');
+?>
+<form method="POST" name="comment_form" id="comment_form">
+    <span>Nick Name:<input name="author" id="author" title="author" class="author" type="text"></span>
+    <span>Text Comment:<input name="content" id="content" title="content" class="content" type="text"><br></span>
+    <span>Email:<input name="email" id="email" title="email" class="email" type="text"></span>
     <input type="hidden" name="post_id" value="<?php echo $block->getPostID() ?>"/>
-    <div class="actions-toolbar">
-        <div class="primary">
-            <button type="submit" class="action submit primary" title="<?php /* @escapeNotVerified */ echo __('Submit') ?>">
-                <span><?php /* @escapeNotVerified */ echo __('Submit') ?></span>
-            </button>
-        </div>
-    </div>
-
+    <br><button id="submit_demo_data">Submit Comment</button>
 </form>
-<script type="text/x-magento-init">
-    {
-        "*": {
-            "Duud_Blog/js/commentajax": {
-                "AjaxCommentPostUrl": "<?php echo $block->getFormAction() ?>",
-                "AjaxCommentLoadUrl": "<?php echo $block->getAjaxUrl() ?>",
-                "AjaxPostId": "<?php echo $block->getPostID(); ?>",
-                "AjaxNotificationLoadUrl": "<?php echo $block->getAjaxNotificationLoadUrl(); ?>"
-            }
-        }
-    }
+<table id='display_data'>
+    <tr>
+        <th>Email</th><th>Nick Name</th><th>Text Comment</th>
+    </tr>
+</table>
+
+<script type="text/javascript">
+    require([
+        "jquery",
+        "mage/mage"
+    ],function($) {
+        $(document).ready(function() {
+            $('#comment_form').mage(
+                'validation',
+                {
+                    submitHandler: function(form) {
+                        var customurl = "<?php echo $this->getUrl().'blog/comment/save'?>";
+                        $.ajax({
+                            url: customurl,
+                            data: $('#comment_form').serialize(),
+                            type: 'POST',
+                            dataType: 'json',
+                            showLoader: true,
+                            cache: false,
+                            success: function(data, status, xhr) {
+                                $('#display_data').append("<tr><td>" + data.email + "</td><td>" + data.author + "</td><td>" + data.content + "</td></tr>");
+                                $("#comment_form").trigger('reset');
+                            },
+                            error: function (xhr, status, errorThrown) {
+                                alert(data);
+                                console.log('Error happens. Try again.');
+                                console.log(errorThrown);
+                            }
+                        });
+                    }
+                }
+            );
+        });
+    });
 </script>

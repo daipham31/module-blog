@@ -1,6 +1,6 @@
 <?php
 
-namespace Duud\Blog\Controller\Adminhtml\Comment;
+namespace Duud\Blog\Controller\Adminhtml\Post;
 
 class NewAction extends \Magento\Backend\App\Action
 {

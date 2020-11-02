@@ -33,11 +33,10 @@
         <column xsi:type="int" name="comment_id" unsigned="true" nullable="false" identity="true" comment="Comment ID"/>
         <column xsi:type="int" name="post_id" unsigned="true" nullable="false" comment="Post ID"/>
         <column xsi:type="text" name="content" nullable="true" comment="Comment Content"/>
-        <column xsi:type="smallint" name="status" unsigned="true" nullable="false" default="2" comment="comment Status"/>
+        <column xsi:type="smallint" name="status" unsigned="true" nullable="false" default="0" comment="comment Status"/>
         <column xsi:type="timestamp" name="creation_time" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Creation Time"/>
         <column xsi:type="varchar" name="author" nullable="false" length="100" comment="Author name"/>
         <column xsi:type="varchar" name="email" nullable="false" length="100" comment="Author email"/>
-        <column xsi:type="int" name="user_id" unsigned="true" nullable="false" comment="User ID"/>
         <index referenceId="BLOG_COMMENT_AUTHOR" indexType="fulltext">
             <column name="author"/>
         </index>
