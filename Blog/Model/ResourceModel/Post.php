@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Model\ResourceModel;
 
 /**

@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Controller\View;
 
 use \Magento\Framework\App\Action\Action;
@@ -11,10 +12,10 @@ class Index extends Action
     /**
      * @param \Magento\Framework\App\Action\Context $context
      */
-    public function __construct(\Magento\Framework\App\Action\Context $context,
-                                \Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
-    )
-    {
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Framework\Controller\Result\ForwardFactory $resultForwardFactory
+    ) {
         $this->resultForwardFactory = $resultForwardFactory;
         parent::__construct($context);
     }

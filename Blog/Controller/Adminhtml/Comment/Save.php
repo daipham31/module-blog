@@ -13,6 +13,7 @@ class Save extends Action
      */
     const ADMIN_RESOURCE = 'Duud_Blog::save';
     protected $dataPersistor;
+
     /**
      * @param Action\Context $context
      * @param DataPersistorInterface $dataPersistor
@@ -20,11 +21,11 @@ class Save extends Action
     public function __construct(
         Action\Context $context,
         DataPersistorInterface $dataPersistor
-    )
-    {
+    ) {
         $this->dataPersistor = $dataPersistor;
         parent::__construct($context);
     }
+
     public function execute()
     {
         $resultRedirect = $this->resultRedirectFactory->create();

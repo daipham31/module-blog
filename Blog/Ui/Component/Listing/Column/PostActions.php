@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Ui\Component\Listing\Column;
 
 use Magento\Framework\View\Element\UiComponent\ContextInterface;

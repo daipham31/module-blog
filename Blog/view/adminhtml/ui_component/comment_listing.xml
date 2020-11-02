@@ -5,7 +5,8 @@
  * See COPYING.txt for license details.
  */
 -->
-<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
             <item name="provider" xsi:type="string">comment_listing.comment_listing_data_source</item>
@@ -85,11 +86,13 @@
                 </param>
                 <param name="indexField" xsi:type="string">comment_id</param>
                 <param name="enabled" xsi:type="boolean">false</param>
-                <param name="selectProvider" xsi:type="string">comment_listing.comment_listing.comment_columns.ids</param>
+                <param name="selectProvider" xsi:type="string">comment_listing.comment_listing.comment_columns.ids
+                </param>
             </editorConfig>
             <childDefaults>
                 <param name="fieldAction" xsi:type="array">
-                    <item name="provider" xsi:type="string">comment_listing.comment_listing.comment_columns_editor</item>
+                    <item name="provider" xsi:type="string">comment_listing.comment_listing.comment_columns_editor
+                    </item>
                     <item name="target" xsi:type="string">startEdit</item>
                     <item name="params" xsi:type="array">
                         <item name="0" xsi:type="string">${ $.$data.rowIndex }</item>

@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\CustomizeProduct\Ui\DataProvider\Product\Form\Modifier;
 
 use Magento\Catalog\Ui\DataProvider\Product\Form\Modifier\AbstractModifier;
@@ -21,7 +22,7 @@ class Test extends AbstractModifier
             ]
         ];
 
- return $meta;
+        return $meta;
     }
 
     /**

@@ -1,5 +1,5 @@
 <?php
-   $block = $this->getLayout()
+$block = $this->getLayout()
     ->createBlock('Duud\Blog\Block\Comment\Load');
 ?>
 <form method="POST" name="comment_form" id="comment_form">
@@ -7,11 +7,14 @@
     <span>Text Comment:<input name="content" id="content" title="content" class="content" type="text"><br></span>
     <span>Email:<input name="email" id="email" title="email" class="email" type="text"></span>
     <input type="hidden" name="post_id" value="<?php echo $block->getPostID() ?>"/>
-    <br><button id="submit_demo_data">Submit Comment</button>
+    <br>
+    <button id="submit_demo_data">Submit Comment</button>
 </form>
 <table id='display_data'>
     <tr>
-        <th>Email</th><th>Nick Name</th><th>Text Comment</th>
+        <th>Email</th>
+        <th>Nick Name</th>
+        <th>Text Comment</th>
     </tr>
 </table>
 
@@ -19,13 +22,13 @@
     require([
         "jquery",
         "mage/mage"
-    ],function($) {
-        $(document).ready(function() {
+    ], function ($) {
+        $(document).ready(function () {
             $('#comment_form').mage(
                 'validation',
                 {
-                    submitHandler: function(form) {
-                        var customurl = "<?php echo $this->getUrl().'blog/comment/save'?>";
+                    submitHandler: function (form) {
+                        var customurl = "<?php echo $this->getUrl() . 'blog/comment/save'?>";
                         $.ajax({
                             url: customurl,
                             data: $('#comment_form').serialize(),
@@ -33,7 +36,7 @@
                             dataType: 'json',
                             showLoader: true,
                             cache: false,
-                            success: function(data, status, xhr) {
+                            success: function (data, status, xhr) {
                                 $('#display_data').append("<tr><td>" + data.email + "</td><td>" + data.author + "</td><td>" + data.content + "</td></tr>");
                                 $("#comment_form").trigger('reset');
                             },

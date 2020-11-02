@@ -23,6 +23,7 @@ class Save extends \Magento\Framework\App\Action\Action
         $this->request = $request;
         parent::__construct($context);
     }
+
     public function execute()
     {
         $data = $this->request->getParams();
@@ -34,8 +35,8 @@ class Save extends \Magento\Framework\App\Action\Action
             $this->messageManager->addErrorMessage(__('Comment was not saved.'));
         }
         $response = $this->resultFactory
-        ->create(\Magento\Framework\Controller\ResultFactory::TYPE_JSON)
-        ->setData($comment->getData());
-    return $response;
+            ->create(\Magento\Framework\Controller\ResultFactory::TYPE_JSON)
+            ->setData($comment->getData());
+        return $response;
     }
 }

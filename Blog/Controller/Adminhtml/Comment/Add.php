@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Controller\Adminhtml\Comment;
 
 class Add extends \Magento\Backend\App\Action

@@ -5,28 +5,27 @@ namespace Duud\Blog\Api\Data;
 interface CommentInterface
 {
 
-    const COMMENT_ID        = 'comment_id';
-    const CONTENT           = 'content';
-    const AUTHOR            = 'author';
-    const POST_ID           = 'post_id';
-    const CREATION_TIME     = 'creation_time';
-    const EMAIL             = 'email';
-    const STATUS            = 'status';
-    const USER_ID           = 'user_id';
-
+    const COMMENT_ID = 'comment_id';
+    const CONTENT = 'content';
+    const AUTHOR = 'author';
+    const POST_ID = 'post_id';
+    const CREATION_TIME = 'creation_time';
+    const EMAIL = 'email';
+    const STATUS = 'status';
+    const USER_ID = 'user_id';
 
 
     public function getId();
 
-   
+
     public function getContent();
 
-   
+
     public function getAuthor();
 
-    
+
     public function getPostId();
-    
+
 
     public function getCreationTime();
 
@@ -57,6 +56,5 @@ interface CommentInterface
 
     public function setStatus($status);
 
-   
 
 }

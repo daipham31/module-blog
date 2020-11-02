@@ -10,6 +10,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
     protected $collection;
     protected $dataPersistor;
     protected $loadedData;
+
     public function __construct(
         $name,
         $primaryFieldName,
@@ -18,13 +19,13 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
         DataPersistorInterface $dataPersistor,
         array $meta = [],
         array $data = []
-    )
-    {
+    ) {
         $this->collection = $bannerCollectionFactory->create();
         $this->dataPersistor = $dataPersistor;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
         $this->meta = $this->prepareMeta($this->meta);
     }
+
     /**
      * Prepares Meta
      */
@@ -32,6 +33,7 @@ class DataProvider extends \Magento\Ui\DataProvider\AbstractDataProvider
     {
         return $meta;
     }
+
     /**
      * Get data
      */

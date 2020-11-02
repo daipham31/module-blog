@@ -22,6 +22,7 @@ class Edit extends \Magento\Backend\App\Action
      * @var \Magento\Framework\View\Result\PageFactory
      */
     protected $resultPageFactory;
+
     /**
      * @param Action\Context $context
      * @param \Magento\Framework\View\Result\PageFactory $resultPageFactory
@@ -36,6 +37,7 @@ class Edit extends \Magento\Backend\App\Action
         $this->_coreRegistry = $registry;
         parent::__construct($context);
     }
+
     /**
      * Init actions
      *
@@ -49,6 +51,7 @@ class Edit extends \Magento\Backend\App\Action
         $resultPage->setActiveMenu('Duud_Blog::blog_content');
         return $resultPage;
     }
+
     /**
      * Edit CMS page
      *

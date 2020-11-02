@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Duud\Blog\Model\ResourceModel\Comment;
 

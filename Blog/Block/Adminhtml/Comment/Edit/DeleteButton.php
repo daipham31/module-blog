@@ -3,9 +3,11 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Duud\Blog\Block\Adminhtml\Comment\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
+
 /**
  * Class DeleteButton
  */
@@ -29,6 +31,7 @@ class DeleteButton extends GenericButton implements ButtonProviderInterface
         }
         return $data;
     }
+
     /**
      * Get URL for Button
      */

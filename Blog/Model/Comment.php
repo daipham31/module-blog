@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace Duud\Blog\Model;
 
@@ -6,9 +6,9 @@ use Magento\Framework\Model\AbstractModel;
 use Duud\Blog\Api\Data\CommentInterface;
 use Magento\Framework\DataObject\IdentityInterface;
 
-class Comment  extends AbstractModel implements CommentInterface, IdentityInterface
+class Comment extends AbstractModel implements CommentInterface, IdentityInterface
 {
-    
+
     const CACHE_TAG = 'blog_comment';
 
     const STATUS_PENDING = 0;
@@ -28,8 +28,8 @@ class Comment  extends AbstractModel implements CommentInterface, IdentityInterf
         \Magento\Framework\UrlInterface $urlBuilder,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
-        array $data = [])
-    {
+        array $data = []
+    ) {
         $this->_urlBuilder = $urlBuilder;
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
@@ -41,7 +41,11 @@ class Comment  extends AbstractModel implements CommentInterface, IdentityInterf
 
     public function getAvailableStatuses()
     {
-        return [self::STATUS_PENDING => __('Pending'), self::STATUS_DENIED => __('Denied'), self::STATUS_APPROVE => __('Approve')];
+        return [
+            self::STATUS_PENDING => __('Pending'),
+            self::STATUS_DENIED => __('Denied'),
+            self::STATUS_APPROVE => __('Approve')
+        ];
     }
 
     public function getIdentities()
@@ -59,11 +63,13 @@ class Comment  extends AbstractModel implements CommentInterface, IdentityInterf
         return $this->getData(self::CONTENT);
     }
 
-    public function getPostID(){
+    public function getPostID()
+    {
         return $this->getData(self::POST_ID);
     }
 
-    public function getAuthor(){
+    public function getAuthor()
+    {
         return $this->getData(self::AUTHOR);
     }
 
@@ -72,7 +78,8 @@ class Comment  extends AbstractModel implements CommentInterface, IdentityInterf
         return $this->getData(self::CREATION_TIME);
     }
 
-    public function getEmail(){
+    public function getEmail()
+    {
         return $this->getData(self::EMAIL);
     }
 
@@ -111,7 +118,7 @@ class Comment  extends AbstractModel implements CommentInterface, IdentityInterf
         return $this->setData(self::EMAIL, $email);
     }
 
-     public function setStatus($status)
+    public function setStatus($status)
     {
         return $this->setData(self::STATUS, $status);
     }

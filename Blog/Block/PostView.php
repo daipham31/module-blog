@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Block;
 
 class PostView extends \Magento\Framework\View\Element\Template implements
@@ -18,8 +19,7 @@ class PostView extends \Magento\Framework\View\Element\Template implements
         \Duud\Blog\Model\Post $post,
         \Duud\Blog\Model\PostFactory $postFactory,
         array $data = []
-    )
-    {
+    ) {
         parent::__construct($context, $data);
         $this->_post = $post;
         $this->_postFactory = $postFactory;

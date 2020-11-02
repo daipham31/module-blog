@@ -1,10 +1,11 @@
-<?php 
+<?php
+
 namespace Duud\Blog\Model;
 
 use Duud\Blog\Api\Data\PostInterface;
 use Magento\Framework\DataObject\IdentityInterface;
 
-class Post  extends \Magento\Framework\Model\AbstractModel implements PostInterface, IdentityInterface
+class Post extends \Magento\Framework\Model\AbstractModel implements PostInterface, IdentityInterface
 {
 
     /**#@+
@@ -50,8 +51,8 @@ class Post  extends \Magento\Framework\Model\AbstractModel implements PostInterf
         \Magento\Framework\UrlInterface $urlBuilder,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
-        array $data = [])
-    {
+        array $data = []
+    ) {
         $this->_urlBuilder = $urlBuilder;
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
@@ -88,6 +89,7 @@ class Post  extends \Magento\Framework\Model\AbstractModel implements PostInterf
     {
         return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
     }
+
     /**
      * Return unique ID(s) for each object in system
      *
@@ -179,7 +181,7 @@ class Post  extends \Magento\Framework\Model\AbstractModel implements PostInterf
      */
     public function isActive()
     {
-        return (bool) $this->getData(self::IS_ACTIVE);
+        return (bool)$this->getData(self::IS_ACTIVE);
     }
 
     /**

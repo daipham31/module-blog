@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Model\Source\Post;
 
 class IsActive implements \Magento\Framework\Data\OptionSourceInterface

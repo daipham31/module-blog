@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Block\Adminhtml;
 
 class Post extends \Magento\Backend\Block\Widget\Grid\Container

@@ -75,7 +75,7 @@ class View extends Template
      */
     protected function _getPostId()
     {
-        return (int) $this->_coreRegistry->registry(
+        return (int)$this->_coreRegistry->registry(
             ViewAction::REGISTRY_KEY_POST_ID
         );
     }

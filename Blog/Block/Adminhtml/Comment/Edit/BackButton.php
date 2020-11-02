@@ -3,9 +3,11 @@
  * Copyright © Magento, Inc. All rights reserved.
  * See COPYING.txt for license details.
  */
+
 namespace Duud\Blog\Block\Adminhtml\Comment\Edit;
 
 use Magento\Framework\View\Element\UiComponent\Control\ButtonProviderInterface;
+
 /**
  * Class BackButton
  */
@@ -23,6 +25,7 @@ class BackButton extends GenericButton implements ButtonProviderInterface
             'sort_order' => 10
         ];
     }
+
     /**
      * Get URL for back (reset) button
      *

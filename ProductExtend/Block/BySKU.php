@@ -1,13 +1,15 @@
 <?php
+
 namespace Duud\ProductExtend\Block;
+
 class BySKU extends \Magento\Framework\View\Element\Template
 {
     protected $_registry;
-	protected $_catalogSession;
+    protected $_catalogSession;
     private $productRepository;
     protected $_product;
 
-	public function __construct(
+    public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Catalog\Model\Session $catalogSession,
@@ -20,7 +22,7 @@ class BySKU extends \Magento\Framework\View\Element\Template
         $this->productRepository = $productRepository;
         $this->productFactory = $productFactory;
         parent::__construct($context, $data);
-   	}
+    }
 
     public function loadMyProduct()
     {
@@ -33,12 +35,13 @@ class BySKU extends \Magento\Framework\View\Element\Template
         $productBySku = $product->loadByAttribute('sku', 'MT12');
         return $productBySku;
     }
-    public function getCatalogSession() 
+
+    public function getCatalogSession()
     {
         return $this->_catalogSession;
     }
 
-     public function getRegistry() 
+    public function getRegistry()
     {
         return $this->_registry->registry('custom_var');
     }

@@ -1,11 +1,11 @@
 <h1><?php
-$this->getCatalogSession()->setMyName('This is Session');
-echo $block->getCatalogSession()->getMyName();
-echo "<br><br>";
-echo "test ss";
-echo "<br><br>";
-echo $this->getRegistry();
- ?></h1>
+    $this->getCatalogSession()->setMyName('This is Session');
+    echo $block->getCatalogSession()->getMyName();
+    echo "<br><br>";
+    echo "test ss";
+    echo "<br><br>";
+    echo $this->getRegistry();
+    ?></h1>
 --------  using  object  manager ----------
 <br>
 <?php
@@ -36,7 +36,7 @@ echo $product;
 <br>
 --------- using Factory class ---------
 <br>
-<?php 
+<?php
 $productFactory = $this->getFactorySku();
 echo $productFactory->getName();
 ?>

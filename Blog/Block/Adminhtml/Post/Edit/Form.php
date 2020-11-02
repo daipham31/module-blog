@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Block\Adminhtml\Post\Edit;
 
 /**

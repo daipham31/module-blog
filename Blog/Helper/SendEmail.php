@@ -11,21 +11,21 @@ use Magento\Framework\App\Config\ScopeConfigInterface;
 class SendEmail extends AbstractHelper
 {
 
-	protected $_scopeConfig;
-	protected $_transportBuilder;
+    protected $_scopeConfig;
+    protected $_transportBuilder;
 
-	public function __construct(
+    public function __construct(
         Context $context,
         ScopeConfigInterface $scopeConfig,
         TransportBuilder $transportBuilder
-    )
-    {
+    ) {
         $this->_scopeConfig = $scopeConfig;
         $this->_transportBuilder = $transportBuilder;
         parent::__construct($context);
     }
+
     public function reminderEmail($commentCount, $email, $name)
-    {   
+    {
         $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
         $senderEmail = $this->_scopeConfig->getValue('trans_email/ident_general/email', $storeScope);
         $senderName = $this->_scopeConfig->getValue('trans_email/ident_general/name', $storeScope);

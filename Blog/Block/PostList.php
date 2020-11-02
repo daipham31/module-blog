@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Block;
 
 use Duud\Blog\Api\Data\PostInterface;
@@ -16,7 +17,7 @@ class PostList extends \Magento\Framework\View\Element\Template implements
      * Construct
      *
      * @param \Magento\Framework\View\Element\Template\Context $context
-     * @param \Duud\Blog\Model\ResourceModel\Post\CollectionFactory $postCollectionFactory,
+     * @param \Duud\Blog\Model\ResourceModel\Post\CollectionFactory $postCollectionFactory ,
      * @param array $data
      */
     public function __construct(

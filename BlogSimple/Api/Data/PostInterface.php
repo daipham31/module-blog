@@ -7,10 +7,10 @@ interface PostInterface
     /**#@+
      * Constants for keys of data array. Identical to the name of the getter in snake case
      */
-    const POST_ID               = 'post_id';
-    const TITLE                 = 'title';
-    const CONTENT               = 'content';
-    const CREATED_AT            = 'created_at';
+    const POST_ID = 'post_id';
+    const TITLE = 'title';
+    const CONTENT = 'content';
+    const CREATED_AT = 'created_at';
     /**#@-*/
 
 

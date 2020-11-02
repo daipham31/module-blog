@@ -1,4 +1,5 @@
 <?php
+
 namespace Duud\Blog\Block\Adminhtml\Post;
 
 class Edit extends \Magento\Backend\Block\Widget\Form\Container
