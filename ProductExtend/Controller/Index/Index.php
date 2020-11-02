@@ -1,6 +1,6 @@
 <?php
  
-namespace Duud\ProductBySKU\Controller\Index;
+namespace Duud\ProductExtend\Controller\Index;
  
 use Magento\Framework\App\Action\Context;
  

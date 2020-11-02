@@ -1,5 +1,5 @@
 <?php
-namespace Duud\ProductBySKU\Block;
+namespace Duud\ProductExtend\Block;
 class BySKU extends \Magento\Framework\View\Element\Template
 {
     protected $_registry;
