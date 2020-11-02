@@ -2,96 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="874b9aeb-b7a0-4aa8-85b0-09d2d016afe3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/AttributePractice/Block/AttributeData.php" beforeDir="false" afterPath="$PROJECT_DIR$/AttributePractice/Block/AttributeData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AttributePractice/Controller/Index/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/AttributePractice/Controller/Index/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AttributePractice/Setup/IntallData.php" beforeDir="false" afterPath="$PROJECT_DIR$/AttributePractice/Setup/IntallData.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AttributePractice/view/frontend/layout/attribute_index_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AttributePractice/view/frontend/layout/attribute_index_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Api/Data/CommentInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Api/Data/CommentInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Api/Data/PostInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Api/Data/PostInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/BackButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/BackButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/DeleteButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/DeleteButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/GenericButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/GenericButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/ResetButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/ResetButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/SaveAndContinueButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/SaveAndContinueButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/SaveButton.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Comment/Edit/SaveButton.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Post/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Post/Edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Adminhtml/Post/Edit/Form.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Adminhtml/Post/Edit/Form.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/Comment/Load.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/Comment/Load.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/PostList.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/PostList.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Block/PostView.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Block/PostView.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Comment/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Comment/Add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Comment/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Comment/Edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Comment/Save.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Comment/Save.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Add.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Add.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Delete.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Delete.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Edit.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Edit.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Save.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Adminhtml/Post/Save.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Comment/Load.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Comment/Load.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Comment/Save.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Comment/Save.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Index/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Index/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Controller/View/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Controller/View/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Cron/Remider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Cron/Remider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/CustomerData/NotificateComment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/CustomerData/NotificateComment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Helper/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Helper/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Helper/SendMail.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Helper/UserInfo.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Helper/UserInfo.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/Comment/DataProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/Comment/DataProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/ResourceModel/Comment/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/ResourceModel/Comment/Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/ResourceModel/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/ResourceModel/Post.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/Source/Comment/Status.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/Source/Comment/Status.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Model/Source/Post/IsActive.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Model/Source/Post/IsActive.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Ui/Component/Listing/Column/CommentActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Ui/Component/Listing/Column/CommentActions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/Ui/Component/Listing/Column/PostActions.php" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/Ui/Component/Listing/Column/PostActions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/acl.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/acl.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/adminhtml/menu.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/adminhtml/menu.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/adminhtml/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/adminhtml/routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/adminhtml/system.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/adminhtml/system.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/config.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/config.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/crontab.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/crontab.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/db_schema.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/db_schema.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/di.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/di.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/etc/email_templates.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/etc/email_templates.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_comment_edit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_comment_edit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_comment_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_comment_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_post_edit.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_post_edit.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_post_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/adminhtml/layout/blog_post_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/adminhtml/ui_component/blog_post_listing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/adminhtml/ui_component/blog_post_listing.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/adminhtml/ui_component/comment_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/adminhtml/ui_component/comment_form.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/adminhtml/ui_component/comment_listing.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/adminhtml/ui_component/comment_listing.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/email/comment_notification_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/email/comment_notification_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/email/reminder_email.html" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/email/reminder_email.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/layout/blog_index_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/layout/blog_index_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/layout/blog_view_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/layout/blog_view_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/layout/default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/layout/default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/templates/comment/add.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/templates/comment/add.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/templates/comment/load.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/templates/comment/load.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/web/js/commentajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/web/js/commentajax.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Blog/view/frontend/web/js/loadcomment.js" beforeDir="false" afterPath="$PROJECT_DIR$/Blog/view/frontend/web/js/loadcomment.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/Api/Data/PostInterface.php" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/Api/Data/PostInterface.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/Block/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/Block/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/Controller/Post/View.php" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/Controller/Post/View.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/Model/ResourceModel/Post/Collection.php" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/Model/ResourceModel/Post/Collection.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/etc/frontend/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/etc/frontend/routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/etc/module.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/etc/module.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/view/frontend/layout/blogsimple_index_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/view/frontend/layout/blogsimple_index_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/view/frontend/layout/blogsimple_post_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/view/frontend/layout/blogsimple_post_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BlogSimple/view/frontend/templates/post/list.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/BlogSimple/view/frontend/templates/post/list.phtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomizeProduct/Ui/DataProvider/Product/Form/Modifier/Test.php" beforeDir="false" afterPath="$PROJECT_DIR$/CustomizeProduct/Ui/DataProvider/Product/Form/Modifier/Test.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomizeProduct/etc/admin/di.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomizeProduct/etc/admin/di.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomizeProduct/etc/module.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomizeProduct/etc/module.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CustomizeProduct/view/adminhtml/ui_component/product_form.xml" beforeDir="false" afterPath="$PROJECT_DIR$/CustomizeProduct/view/adminhtml/ui_component/product_form.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductExtend/Block/BySKU.php" beforeDir="false" afterPath="$PROJECT_DIR$/ProductExtend/Block/BySKU.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductExtend/Controller/Index/Index.php" beforeDir="false" afterPath="$PROJECT_DIR$/ProductExtend/Controller/Index/Index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductExtend/etc/frontend/routes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductExtend/etc/frontend/routes.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductExtend/etc/module.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductExtend/etc/module.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductExtend/view/frontend/layout/bysku_index_index.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductExtend/view/frontend/layout/bysku_index_index.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProductExtend/view/frontend/templates/bysku.phtml" beforeDir="false" afterPath="$PROJECT_DIR$/ProductExtend/view/frontend/templates/bysku.phtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +38,7 @@
       <updated>1604307331539</updated>
       <workItem from="1604307332695" duration="534000" />
       <workItem from="1604307889132" duration="231000" />
-      <workItem from="1604308160767" duration="487000" />
+      <workItem from="1604308160767" duration="1165000" />
     </task>
     <servers />
   </component>

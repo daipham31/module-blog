@@ -1,15 +1,9 @@
-<?php
-$comments = $this->getComments();
-if (count($comments) > 0) {
-    echo "<h4>";
-    echo __('Lastest Comment For Post ID: ') . $block->getPostID();
-    echo "</h4>";
-    echo "<h1>Block List Comment</h1>";
-    foreach ($comments as $item) {
-        echo "<p>" . $item->getAuthor() . "</p>";
-        echo "<p>" . $item->getContent() . "</p>";
-    }
-} else {
-    echo "<h3>no comments</h3>";
-}
-?>
+<h3 class="title">Comments:</h3>
+<div class="comment-list" id="comment-list">
+    <?php $comments = $this->getComments(); ?>
+    <?php foreach($comments as $comment) { ?>
+        <h4 class="author">Author: <?= $comment->getAuthor() ?></h4>
+        <p class="author-email">Email: <?= $comment->getEmail() ?></p>
+        <p class="comment-content">Comment:<?= $comment->getContent() ?></p>
+    <?php } ?>
+</div>
