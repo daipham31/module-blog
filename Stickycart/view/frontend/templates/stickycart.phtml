@@ -1,0 +1,67 @@
+<?php
+  $heightScroll = 600;
+  $currentProduct = $block->getCurrentProduct();
+  $id = $currentProduct->getId();
+  $_productStock = $block->getStockItem($id);
+  $imageUrl = $this->helper('Magento\Catalog\Helper\Image')
+                    ->init($currentProduct, 'product_base_image')
+                    ->constrainOnly(TRUE)
+                    ->keepAspectRatio(TRUE)
+                    ->keepTransparency(TRUE)
+                    ->keepFrame(FALSE)
+                    ->resize(80, 80)->getUrl();
+?>
+<?php if($_productStock->getIsInStock()): ?>
+  <div class="stickyCart">
+    <div class="stickyChild">
+    <div class="contentHide">
+    <div class="clSticky" id="timerSticky">
+      <div class="stickyProductName"><?= $block->escapeHtml(__($currentProduct->getName())) ?></div>
+      </div>
+    </div>
+    <div class="contentHide">
+    <div class="clSticky"><div class="imgBorder"><div class="borderImg"><img class="stickyImg" src="<?= $imageUrl; ?>"></div></div></div></div>
+    <div class="contentHide">
+    <div class="clSticky" id="parentQtySticky">
+      <?php if ($currentProduct->getTypeId() == 'grouped'): ?>
+      <div class="quantity">
+        <input type="number" min="1" value="1" id="qtyGrouped">
+      </div>
+      <?php else: ?>
+        <div class="quantity">
+        <input type="number" min="1" value="1" id="qtySticky">
+      </div>
+        <?php endif; ?>
+      </div>
+    </div>
+    <?php if ($currentProduct->getTypeId() == 'bundle'): ?>
+    <div class="contentShow"><div class="clSticky"><button class="btnCustom">Customize</button></div></div>
+      <?php else: ?>
+    <div class="contentShow"><div class="clSticky"><button id="btnSticky">Add To Cart</button>
+    </div></div>
+  <?php endif; ?>
+  </div>
+  </div>
+<?php endif; ?>
+<?php
+$formData = [
+    'stickyCart'    				    =>  '.stickyCart',
+    'qtySticky'						      =>	'#qtySticky',
+    'btnCustom'                 =>  '#btnCustom',
+    'quantity'                  =>  '.quantity',
+    'qtyGrouped'                =>  '#qtyGrouped',
+    'btnSticky'                 =>  '#btnSticky'
+];
+$stickyData = $this->helper('Magento\Framework\Json\Helper\Data')->jsonEncode($formData);
+?>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "stickycart": {
+            "jsonData":<?php /* @noEscape */ echo $stickyData; ?>,
+            "ScrollHeight": <?php   echo $heightScroll; ?>
+            }
+        }
+    }
+</script>
+
