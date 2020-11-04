@@ -1,0 +1,17 @@
+test section
+<div class="customsection" data-bind="scope: 'section'">
+    <p data-bind="text: customsection().msg"></p>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Magento_Ui/js/core/app": {
+                "components": {
+                    "section": {
+                        "component": "Duud_PrivateContent/js/section"
+                    }
+                }
+            }
+        }
+    }
+</script>
