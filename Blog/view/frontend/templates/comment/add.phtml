@@ -9,6 +9,7 @@
     <input type="hidden" name="post_id" value="<?= $block->getPostID() ?>"/>
     <br><button id="submit_demo_data">Submit Comment</button>
 </form>
+<div class="note"></div>
 
 <script type="text/javascript">
     require([
@@ -33,9 +34,8 @@
                                 $("#comment_form").trigger('reset');
                             },
                             error: function (xhr, status, errorThrown) {
-                                alert(data);
-                                console.log('Error happens. Try again.');
-                                console.log(errorThrown);
+                                $('.note').append("<div>Please! Loggin to comment!</div>");
+                                $('.note').css('color','red');
                             }
                         });
                     }

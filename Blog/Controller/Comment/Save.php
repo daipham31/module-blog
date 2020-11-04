@@ -26,6 +26,11 @@ class Save extends \Magento\Framework\App\Action\Action
 
     public function execute()
     {
+        
+        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+        $customerSession = $objectManager->get('Magento\Customer\Model\Session');
+        if($customerSession->isLoggedIn())
+        {
         $data = $this->request->getParams();
         $comment = $this->comment->create();
         $comment->setData($data);
@@ -37,6 +42,12 @@ class Save extends \Magento\Framework\App\Action\Action
         $response = $this->resultFactory
             ->create(\Magento\Framework\Controller\ResultFactory::TYPE_JSON)
             ->setData($comment->getData());
-        return $response;
+        return $response;  
+
+        }else{
+            $comment->delete();
+        }
+             
+        
     }
 }
