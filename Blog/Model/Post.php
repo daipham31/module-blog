@@ -1,11 +1,10 @@
 <?php
-
 namespace Duud\Blog\Model;
 
 use Duud\Blog\Api\Data\PostInterface;
 use Magento\Framework\DataObject\IdentityInterface;
 
-class Post extends \Magento\Framework\Model\AbstractModel implements PostInterface, IdentityInterface
+class Post  extends \Magento\Framework\Model\AbstractModel implements PostInterface, IdentityInterface
 {
 
     /**#@+
@@ -18,19 +17,19 @@ class Post extends \Magento\Framework\Model\AbstractModel implements PostInterfa
     /**
      * CMS page cache tag
      */
-    const CACHE_TAG = 'blog_post';
+    const CACHE_TAG = 'duud_blog_post';
 
     /**
      * @var string
      */
-    protected $_cacheTag = 'blog_post';
+    protected $_cacheTag = 'duud_blog_post';
 
     /**
      * Prefix of model events names
      *
      * @var string
      */
-    protected $_eventPrefix = 'blog_post';
+    protected $_eventPrefix = 'duud_blog_post';
 
     /**
      * @var \Magento\Framework\UrlInterface
@@ -51,8 +50,8 @@ class Post extends \Magento\Framework\Model\AbstractModel implements PostInterfa
         \Magento\Framework\UrlInterface $urlBuilder,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
-        array $data = []
-    ) {
+        array $data = [])
+    {
         $this->_urlBuilder = $urlBuilder;
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
@@ -89,7 +88,6 @@ class Post extends \Magento\Framework\Model\AbstractModel implements PostInterfa
     {
         return [self::STATUS_ENABLED => __('Enabled'), self::STATUS_DISABLED => __('Disabled')];
     }
-
     /**
      * Return unique ID(s) for each object in system
      *
@@ -97,7 +95,11 @@ class Post extends \Magento\Framework\Model\AbstractModel implements PostInterfa
      */
     public function getIdentities()
     {
-        return [self::CACHE_TAG . '_' . $this->getId()];
+        $identities = [];
+
+        $identities = [self::CACHE_TAG . '_' . $this->getId(),
+            \Duud\Blog\Model\Post::CACHE_TAG];
+        return $identities;
     }
 
     /**
@@ -181,7 +183,7 @@ class Post extends \Magento\Framework\Model\AbstractModel implements PostInterfa
      */
     public function isActive()
     {
-        return (bool)$this->getData(self::IS_ACTIVE);
+        return (bool) $this->getData(self::IS_ACTIVE);
     }
 
     /**

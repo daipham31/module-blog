@@ -42,6 +42,7 @@
                 comment="Creation Time"/>
         <column xsi:type="varchar" name="author" nullable="false" length="100" comment="Author name"/>
         <column xsi:type="varchar" name="email" nullable="false" length="100" comment="Author email"/>
+        <column xsi:type="int" name="user_id" nullable="false"  comment="User ID"/>
         <index referenceId="BLOG_COMMENT_AUTHOR" indexType="fulltext">
             <column name="author"/>
         </index>

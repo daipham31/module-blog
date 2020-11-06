@@ -1,0 +1,7 @@
+<?php $block = $this->getLayout()
+    ->createBlock('Duud\Blog\Block\Comment\Load'); ?>
+<h3>Logged In</h3>
+<div class="cmtcount">
+    <p><strong>You have </strong><?= $block->getCommentCount() ?> comments!</p>
+    <p><?= $block->getUserId() ?></p>
+</div>

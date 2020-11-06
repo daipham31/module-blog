@@ -4,29 +4,39 @@ namespace Duud\Blog\Block\Comment;
 
 use Duud\Blog\Api\Data\CommentInterface;
 use Duud\Blog\Model\ResourceModel\Comment\Collection as CommentCollection;
+use Magento\Customer\Model\Session;
 
-class Load extends \Magento\Framework\View\Element\Template
+class Load extends \Magento\Framework\View\Element\Template implements
+    \Magento\Framework\DataObject\IdentityInterface
 {
     protected $_commentCollectionFactory;
     protected $_request;
     protected $_resultJsonFactory;
+    protected $_customerSession;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Duud\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Framework\App\RequestInterface $request,
+        \Magento\Customer\Model\Session $customerSession,
         array $data = []
     ) {
         $this->_commentCollectionFactory = $commentCollectionFactory;
         $this->_resultJsonFactory = $resultJsonFactory;
         $this->_request = $request;
+        $this->_customerSession = $customerSession;
         parent::__construct($context, $data);
     }
 
     public function getPostId()
     {
         return $this->_request->getParam('post_id', false);
+    }
+
+    public function getUser()
+    {
+        return $this->_customerSession->getCustomer();
     }
 
     public function getComments()
@@ -46,5 +56,34 @@ class Load extends \Magento\Framework\View\Element\Template
             $this->setData("cmt", $comments);
         }
         return $this->getData("cmt");
+    }
+
+    public function getCommentCount()
+    {
+        $user_id = $this->getUser   ()->getId();
+        $comments = $this->_commentCollectionFactory
+            ->create()
+            ->addFieldToFilter('user_id', $user_id);
+        return $comments->count();
+    }
+
+    /**
+     * Return identifiers for produced content
+     *
+     * @return array
+     */
+    public function getIdentities()
+    {
+        $identities = [];
+
+        if (is_array($this->getComments()) || is_object($this->getComments()))
+        {
+            foreach ($this->getComments() as $item)
+            {
+                $identities = array_merge($identities, $item->getIdentities());
+            }
+        }
+        return $identities;
+
     }
 }

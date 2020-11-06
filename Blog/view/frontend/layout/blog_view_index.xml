@@ -3,12 +3,11 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Duud\Blog\Block\PostView" name="blog.list" template="Duud_Blog::post/view.phtml"/>
+            <block class="Duud\Blog\Block\PostView" name="blog.view" template="Duud_Blog::post/view.phtml"/>
             <block class="Magento\Framework\View\Element\Template" name="comment.add"
                    template="Duud_Blog::comment/add.phtml"></block>
             <block class="Duud\Blog\Block\Comment\Load" name="blog_comment_load"
-                   template="Duud_Blog::comment/load.phtml" cacheable="false"/>
+                   template="Duud_Blog::comment/load.phtml"/>
         </referenceContainer>
     </body>
 </page>
-    

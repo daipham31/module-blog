@@ -53,7 +53,7 @@ class PostView extends \Magento\Framework\View\Element\Template implements
      */
     public function getIdentities()
     {
-        return [\Duud\Blog\Model\Post::CACHE_TAG . '_' . $this->getPost()->getId()];
+        return $this->getPost()->getIdentities();
     }
 
 }

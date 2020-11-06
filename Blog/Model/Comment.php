@@ -6,19 +6,19 @@ use Magento\Framework\Model\AbstractModel;
 use Duud\Blog\Api\Data\CommentInterface;
 use Magento\Framework\DataObject\IdentityInterface;
 
-class Comment extends AbstractModel implements CommentInterface, IdentityInterface
+class Comment  extends AbstractModel implements CommentInterface, IdentityInterface
 {
 
-    const CACHE_TAG = 'blog_comment';
+    const CACHE_TAG = 'duud_blog_comment';
 
     const STATUS_PENDING = 0;
     const STATUS_DENIED = 1;
     const STATUS_APPROVE = 2;
 
 
-    protected $_cacheTag = 'blog_comment';
+    protected $_cacheTag = 'duud_blog_comment';
 
-    protected $_eventPrefix = 'blog_comment';
+    protected $_eventPrefix = 'duud_blog_comment';
 
     protected $_urlBuilder;
 
@@ -28,8 +28,8 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
         \Magento\Framework\UrlInterface $urlBuilder,
         \Magento\Framework\Model\ResourceModel\AbstractResource $resource = null,
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
-        array $data = []
-    ) {
+        array $data = [])
+    {
         $this->_urlBuilder = $urlBuilder;
         parent::__construct($context, $registry, $resource, $resourceCollection, $data);
     }
@@ -41,16 +41,20 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
 
     public function getAvailableStatuses()
     {
-        return [
-            self::STATUS_PENDING => __('Pending'),
-            self::STATUS_DENIED => __('Denied'),
-            self::STATUS_APPROVE => __('Approve')
-        ];
+        return [self::STATUS_PENDING => __('Pending'), self::STATUS_DENIED => __('Denied'), self::STATUS_APPROVE => __('Approve')];
     }
 
+    /**
+     * Return unique ID(s) for each object in system
+     *
+     * @return array
+     */
     public function getIdentities()
     {
-        return [self::CACHE_TAG . '_' . $this->getId()];
+        return [
+            self::CACHE_TAG . '_' . $this->getId(),
+            \Duud\Blog\Model\Comment::CACHE_TAG
+        ];
     }
 
     public function getId()
@@ -63,13 +67,11 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
         return $this->getData(self::CONTENT);
     }
 
-    public function getPostID()
-    {
+    public function getPostID(){
         return $this->getData(self::POST_ID);
     }
 
-    public function getAuthor()
-    {
+    public function getAuthor(){
         return $this->getData(self::AUTHOR);
     }
 
@@ -78,8 +80,7 @@ class Comment extends AbstractModel implements CommentInterface, IdentityInterfa
         return $this->getData(self::CREATION_TIME);
     }
 
-    public function getEmail()
-    {
+    public function getEmail(){
         return $this->getData(self::EMAIL);
     }
 

@@ -65,4 +65,11 @@
             </argument>
         </arguments>
     </type>
+    <!-- Plugins -->
+    <type name="Magento\Framework\View\Result\Layout">
+        <plugin name="add_customer_status_to_layout"
+                type="Duud\Blog\Plugin\BlockShowExceptions"
+                sortOrder="10"
+                disabled="false"/>
+    </type>
 </config>

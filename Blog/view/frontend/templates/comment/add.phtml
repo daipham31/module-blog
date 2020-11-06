@@ -6,7 +6,8 @@
     <span>Nick Name:<input name="author" id="author" title="author" class="author" type="text"></span>
     <span>Text Comment:<input name="content" id="content" title="content" class="content" type="text"><br></span>
     <span>Email:<input name="email" id="email" title="email" class="email" type="text"></span>
-    <input type="hidden" name="post_id" value="<?= $block->getPostID() ?>"/>
+    <input type="hidden" name="post_id" value="<?= $block->getPostId() ?>"/>
+    <input type="hidden" name="user_id" value="<?= $block->getUserId() ?>"/>
     <br><button id="submit_demo_data">Submit Comment</button>
 </form>
 <div class="note"></div>
