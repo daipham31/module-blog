@@ -4,7 +4,6 @@ namespace Duud\Blog\Block\Comment;
 
 use Duud\Blog\Api\Data\CommentInterface;
 use Duud\Blog\Model\ResourceModel\Comment\Collection as CommentCollection;
-use Magento\Customer\Model\Session;
 
 class Load extends \Magento\Framework\View\Element\Template implements
     \Magento\Framework\DataObject\IdentityInterface
@@ -12,7 +11,6 @@ class Load extends \Magento\Framework\View\Element\Template implements
     protected $_commentCollectionFactory;
     protected $_request;
     protected $_resultJsonFactory;
-    protected $_customerSession;
     protected $httpContext;
 
     public function __construct(
@@ -20,14 +18,12 @@ class Load extends \Magento\Framework\View\Element\Template implements
         \Duud\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Framework\App\RequestInterface $request,
-        \Magento\Customer\Model\Session $customerSession,
         \Magento\Framework\App\Http\Context $httpContext,
         array $data = []
     ) {
         $this->_commentCollectionFactory = $commentCollectionFactory;
         $this->_resultJsonFactory = $resultJsonFactory;
         $this->_request = $request;
-        $this->_customerSession = $customerSession;
         $this->httpContext = $httpContext;
         parent::__construct($context, $data);
     }
@@ -55,6 +51,10 @@ class Load extends \Magento\Framework\View\Element\Template implements
     public function getCustomerEmail()
     {
         return $this->httpContext->getValue('customer_email');
+    }
+
+    public function getTestId(){
+        return 2;
     }
 
     public function getComments()
