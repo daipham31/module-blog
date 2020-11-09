@@ -72,4 +72,7 @@
                 sortOrder="10"
                 disabled="false"/>
     </type>
+    <type name="Magento\Framework\App\Action\AbstractAction">
+        <plugin name="customer-session-data-to-context" type="Duud\Blog\Plugin\CustomerSessionContext" sortOrder="15"/>
+    </type>
 </config>

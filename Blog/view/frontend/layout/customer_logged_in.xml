@@ -3,7 +3,7 @@
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
         <referenceContainer name="content">
-            <block class="Magento\Framework\View\Element\Template" name="cmt.count" after="blog.list" template="Duud_Blog::logged-in.phtml" cacheable="false"></block>
+            <block class="Duud\Blog\Block\Comment\Load" name="cmt.count" after="blog.list" template="Duud_Blog::logged-in.phtml"></block>
         </referenceContainer>
     </body>
 </page>

@@ -13,6 +13,7 @@ class Load extends \Magento\Framework\View\Element\Template implements
     protected $_request;
     protected $_resultJsonFactory;
     protected $_customerSession;
+    protected $httpContext;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
@@ -20,12 +21,14 @@ class Load extends \Magento\Framework\View\Element\Template implements
         \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Framework\App\RequestInterface $request,
         \Magento\Customer\Model\Session $customerSession,
+        \Magento\Framework\App\Http\Context $httpContext,
         array $data = []
     ) {
         $this->_commentCollectionFactory = $commentCollectionFactory;
         $this->_resultJsonFactory = $resultJsonFactory;
         $this->_request = $request;
         $this->_customerSession = $customerSession;
+        $this->httpContext = $httpContext;
         parent::__construct($context, $data);
     }
 
@@ -34,9 +37,24 @@ class Load extends \Magento\Framework\View\Element\Template implements
         return $this->_request->getParam('post_id', false);
     }
 
-    public function getUser()
+    public function getCustomerIsLoggedIn()
     {
-        return $this->_customerSession->getCustomer();
+        return (bool)$this->httpContext->getValue(\Magento\Customer\Model\Context::CONTEXT_AUTH);
+    }
+
+    public function getCustomerId()
+    {
+        return $this->httpContext->getValue('customer_id');
+    }
+
+    public function getCustomerName()
+    {
+        return $this->httpContext->getValue('customer_name');
+    }
+
+    public function getCustomerEmail()
+    {
+        return $this->httpContext->getValue('customer_email');
     }
 
     public function getComments()
@@ -60,7 +78,7 @@ class Load extends \Magento\Framework\View\Element\Template implements
 
     public function getCommentCount()
     {
-        $user_id = $this->getUser   ()->getId();
+        $user_id = $this->getCustomerId();
         $comments = $this->_commentCollectionFactory
             ->create()
             ->addFieldToFilter('user_id', $user_id);
