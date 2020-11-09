@@ -73,6 +73,6 @@
                 disabled="false"/>
     </type>
     <type name="Magento\Framework\App\Action\AbstractAction">
-        <plugin name="customer-session-data-to-context" type="Duud\Blog\Plugin\CustomerSessionContext" sortOrder="15"/>
+        <plugin name="customer-session-data-to-context" type="Duud\Blog\Plugin\CustomerSessionContext" sortOrder="15" disabled="false"/>
     </type>
 </config>
