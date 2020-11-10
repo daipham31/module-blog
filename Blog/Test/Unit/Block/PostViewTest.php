@@ -39,4 +39,9 @@ class PostViewTest extends TestCase {
             $this->block->getIdentities()
         );
     }
+    public function testGetPost()
+    {
+        $this->block->setPost($this->post);
+        $this->assertEquals($this->post, $this->block->getPost());
+    }
 }
