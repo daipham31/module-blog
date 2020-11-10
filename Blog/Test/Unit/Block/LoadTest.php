@@ -7,7 +7,9 @@ use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Magento\Framework\App\Http\Context as HttpContext;
 use Magento\Framework\App\RequestInterface;
-use Magento\Framework\TestFramework\Unit\Helper\ObjectManager as ObjectManagerHelper;
+use Magento\Framework\DataObject\IdentityInterface;
+use Duud\Blog\Model\ResourceModel\Comment\CollectionFactory;
+use Magento\Framework\Controller\Result\JsonFactory;
 
 class LoadTest extends TestCase
 {
@@ -15,6 +17,11 @@ class LoadTest extends TestCase
      * @var Context|MockObject
      */
     private $contextMock;
+
+    /**
+     * @var JsonFactory|MockObject
+     */
+    private $resultJsonFactoryMock;
 
     /**
      * @var HttpContext|MockObject
@@ -27,10 +34,9 @@ class LoadTest extends TestCase
     private $requestMock;
 
     /**
-     * @var Load
+     * @var CollectionFactory|MockObject
      */
-    private $load;
-
+    private $collectionFactoryMock;
 
     /**
      * This function is called before the test runs.
@@ -38,17 +44,30 @@ class LoadTest extends TestCase
      */
     protected function setUp(): void
     {
-        $this->contextMock = $this->createMock(Context::class);
-        $this->requestMock = $this->createMock(RequestInterface::class);
-        $this->httpContextMock = $this->createMock(HttpContext::class);
+        $contextMock = $this->getMockBuilder(Context::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $requestMock = $this->getMockBuilder(RequestInterface::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $requestMock->method('getParam')
+            ->willReturn(false);
 
-        $this->load = (new ObjectManagerHelper($this))->getObject(
-            Load::class,
-            [
-                'context' => $this->contextMock,
-                'httpContext' => $this->httpContextMock,
-                'request' => $this->requestMock
-            ]
+        $httpContextMock = $this->getMockBuilder(HttpContext::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $collectionFactoryMock = $this->getMockBuilder(CollectionFactory::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+        $resultJsonFactoryMock = $this->getMockBuilder(JsonFactory::class)
+            ->disableOriginalConstructor()
+            ->getMock();
+
+        $this->load = new Load(
+            $contextMock,
+            $collectionFactoryMock,
+            $requestMock,
+            $httpContextMock
         );
 
     }
@@ -68,17 +87,19 @@ class LoadTest extends TestCase
     public function testGetTestId()
     {
         $result = $this->load->getTestId();
-        echo $result;
         $expectedResult = 2;
         $this->assertEquals($expectedResult, $result);
     }
 
-    public function testGetCustomerId()
+    public function testLoadInstance()
     {
-        $result = $this->load->getCustomerId();
-        echo $result;
-        $expectedResult = 2;
-        $this->assertEquals($expectedResult, $result);
+        $this->assertInstanceOf(Load::class,$this->load);
     }
+
+    public function testImplementsIdentityInterface()
+    {
+        $this->assertInstanceOf(IdentityInterface::class,$this->load);
+    }
+
 
 }

@@ -10,19 +10,16 @@ class Load extends \Magento\Framework\View\Element\Template implements
 {
     protected $_commentCollectionFactory;
     protected $_request;
-    protected $_resultJsonFactory;
     protected $httpContext;
 
     public function __construct(
         \Magento\Framework\View\Element\Template\Context $context,
         \Duud\Blog\Model\ResourceModel\Comment\CollectionFactory $commentCollectionFactory,
-        \Magento\Framework\Controller\Result\JsonFactory $resultJsonFactory,
         \Magento\Framework\App\RequestInterface $request,
         \Magento\Framework\App\Http\Context $httpContext,
         array $data = []
     ) {
         $this->_commentCollectionFactory = $commentCollectionFactory;
-        $this->_resultJsonFactory = $resultJsonFactory;
         $this->_request = $request;
         $this->httpContext = $httpContext;
         parent::__construct($context, $data);
