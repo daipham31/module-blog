@@ -49,9 +49,8 @@ class LoadTest extends TestCase
             ->getMock();
         $requestMock = $this->getMockBuilder(RequestInterface::class)
             ->disableOriginalConstructor()
-            ->getMock();
-        $requestMock->method('getParam')
-            ->willReturn(false);
+            ->setMethods(['getParam'])
+            ->getMockForAbstractClass();
 
         $httpContextMock = $this->getMockBuilder(HttpContext::class)
             ->disableOriginalConstructor()
@@ -101,5 +100,19 @@ class LoadTest extends TestCase
         $this->assertInstanceOf(IdentityInterface::class,$this->load);
     }
 
+    public function testGetComments()
+    {
 
+
+        $requestMock = $this->getMockBuilder(RequestInterface::class)
+            ->disableOriginalConstructor()
+            ->setMethods(['getParam'])
+            ->getMockForAbstractClass();
+
+        $requestMock->expects($this->once())
+            ->method('getParam')
+            ->with('post_id',false);
+
+        $this->assertNull($this->load->getComments());
+    }
 }

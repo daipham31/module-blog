@@ -27,7 +27,7 @@ class Load extends \Magento\Framework\View\Element\Template implements
 
     public function getPostId()
     {
-        return $this->_request->getParam('post_id', false);
+         return $this->_request->getParam('post_id', false);
     }
 
     public function getCustomerIsLoggedIn()
